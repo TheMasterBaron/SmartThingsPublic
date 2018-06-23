@@ -68,7 +68,7 @@ def tvHandler(evt)
 def noiseHandler(evt)
 {
 	log.debug "noiseHandler: ${evt.value}"
-    poll()
+    //poll()
 }
 
 def isNoiseOn() {
@@ -86,7 +86,7 @@ private everyoneIsAway() {
     // iterate over our people variable that we defined
     // in the preferences method
     for (person in people) {
-        if (person.currentPresence == "present") {
+        if (person.currentState('presence').getValue() == "present") {
             // someone is present, so set our our result
             // variable to false and terminate the loop.
             result = false
